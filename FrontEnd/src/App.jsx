@@ -21,7 +21,7 @@ function App() {
     const isAdmin = user?.email === "admin@streamflix.com";
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/StreamFlix">
             {isAdmin ? <AdminNavbar /> : <Navbar />}
             <div className="navbar-spacer"></div>
             <Routes>
