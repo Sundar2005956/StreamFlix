@@ -28,7 +28,7 @@ function AddMovie() {
         e.preventDefault();
 
         try {
-            await axios.post("http://localhost:8080/api/movies/addMovie", {
+            await axios.post("https://streamflix-production-c42cb2b9.up.railway.app/api/movies/addMovie", {
                 ...movie,
                 releaseYear: Number(movie.releaseYear),
                 rating: Number(movie.rating)

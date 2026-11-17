@@ -7,7 +7,7 @@ function MovieDetails() {
     const [movie, setMovie] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/movies/getMovie/${id}`)
+        axios.get(`https://streamflix-production-c42cb2b9.up.railway.app/api/movies/getMovie/${id}`)
             .then(response => setMovie(response.data))
             .catch(error => console.log(error));
     }, [id]);

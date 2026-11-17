@@ -7,7 +7,7 @@ function AdminHome() {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/movies/getMovie")
+        axios.get("https://streamflix-production-c42cb2b9.up.railway.app/api/movies/getMovie")
             .then(response => setMovies(response.data))
             .catch(error => console.log(error));
     }, []);

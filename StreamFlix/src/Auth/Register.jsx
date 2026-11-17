@@ -19,7 +19,7 @@ function Register() {
         e.preventDefault();
 
         try {
-            await axios.post("http://localhost:8080/api/users/register", user);
+            await axios.post("https://streamflix-production-c42cb2b9.up.railway.app/api/users/register", user);
             alert("Registration Successful!");
             navigate("/login");
         } catch (error) {

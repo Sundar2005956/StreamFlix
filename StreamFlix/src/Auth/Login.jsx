@@ -18,7 +18,7 @@ function Login() {
 
         try {
             const response = await axios.post(
-                "http://localhost:8080/api/users/login", user
+                "https://streamflix-production-c42cb2b9.up.railway.app/api/users/login", user
             );
 
             localStorage.setItem("user", JSON.stringify(response.data));
