@@ -1,23 +1,25 @@
 
 import { Link, useNavigate } from "react-router-dom";
 
-function AdminNavbar() {
+function AdminNavbar({ onLogout }) {
 
     const navigate = useNavigate();
 
     const handleLogout = () => {
         localStorage.removeItem("user");
+        onLogout();
         navigate("/login");
-        window.location.reload();
     };
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-black px-4 fixed-top">
+
             <Link className="navbar-brand text-danger fw-bold" to="/admin">
                 STREAMFLIX ADMIN
             </Link>
 
             <div className="ms-auto d-flex gap-3 align-items-center">
+
                 <Link className="nav-link text-white" to="/admin">
                     Dashboard
                 </Link>
@@ -37,6 +39,7 @@ function AdminNavbar() {
                 <button onClick={handleLogout} className="btn btn-danger">
                     Logout
                 </button>
+
             </div>
         </nav>
     );

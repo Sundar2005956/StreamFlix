@@ -28,7 +28,11 @@ function App() {
     return (
         <BrowserRouter basename="/StreamFlix">
 
-            {isAdmin ? <AdminNavbar /> : <Navbar />}
+            {isAdmin ? (
+                <AdminNavbar onLogout={() => setUser(null)} />
+            ) : (
+                <Navbar />
+            )}
 
             <div className="navbar-spacer"></div>
 
@@ -36,9 +40,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/userhome" element={<UserHome />} />
 
-                <Route path="/login"
-                    element={<Login onLogin={setUser} />} />
-
+                <Route path="/login" element={<Login onLogin={setUser} />} />
                 <Route path="/register" element={<Register />} />
 
                 <Route path="/movies" element={<Movie />} />
