@@ -5,7 +5,7 @@ function AdminNavbar() {
 
     const handleLogout = () => {
         localStorage.removeItem("user");
-        window.location.href = "/";
+          navigate("/login");
     };
 
     return (
