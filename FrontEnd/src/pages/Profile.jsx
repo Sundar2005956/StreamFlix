@@ -4,12 +4,14 @@ function Profile() {
 
     return (
         <div className="container mt-5">
-            <div className="card bg-dark text-white p-4 mx-auto" style={{ maxWidth: "500px" }}>
+            <div className="card bg-dark text-white p-4 mx-auto"
+                style={{ maxWidth: "500px" }}>
+
                 <h2 className="text-danger mb-4">My Profile</h2>
 
-                <p><strong>Name:</strong> {user?.fullName || "Not available"}</p>
+                <p><strong>Name:</strong> {user?.fullname || "Not available"}</p>
                 <p><strong>Email:</strong> {user?.email || "Not available"}</p>
-                <p><strong>Role:</strong> {user?.role?.rolename || user?.role || "USER"}</p>
+                <p><strong>Role:</strong> {user?.roleid?.rolename || "USER"}</p>
             </div>
         </div>
     );

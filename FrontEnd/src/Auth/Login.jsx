@@ -1,13 +1,15 @@
+
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function Login() {
+function Login({ onLogin }) {
     const [user, setUser] = useState({
         email: "",
         password: ""
     });
 
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
@@ -18,14 +20,21 @@ function Login() {
 
         try {
             const response = await axios.post(
-                "https://streamflix-production-c42cb2b9.up.railway.app/api/users/login", user
+                "https://streamflix-production-c42cb2b9.up.railway.app/api/users/login",
+                user
             );
 
             localStorage.setItem("user", JSON.stringify(response.data));
+            onLogin(response.data);
 
             alert("Login Successful!");
-            
-    window.location.href = "/";
+
+            if (response.data.roleid?.rolename === "ADMIN") {
+                navigate("/admin");
+            } else {
+                navigate("/");
+            }
+
         } catch (error) {
             alert("Invalid Email or Password!");
         }
