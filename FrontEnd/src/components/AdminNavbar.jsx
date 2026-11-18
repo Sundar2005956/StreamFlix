@@ -1,7 +1,9 @@
 
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 function AdminNavbar() {
+
+    const navigate=useNavigate();
 
     const handleLogout = () => {
         localStorage.removeItem("user");
