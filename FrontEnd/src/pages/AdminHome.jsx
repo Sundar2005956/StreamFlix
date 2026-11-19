@@ -18,7 +18,7 @@ function AdminHome() {
                 <h2 className="text-danger">Admin Dashboard</h2>
             </div>
 
-            <h4 className="mb-4">Manage Movies</h4>
+         
 
             <div className="row">
                 {movies.map(movie => (

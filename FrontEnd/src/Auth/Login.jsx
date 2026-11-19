@@ -61,6 +61,30 @@ function Login({ onLogin }) {
                     New user? <Link to="/register">Register</Link>
                 </p>
             </div>
+
+             <div className="mt-5">
+
+                <h4 className="text-danger fw-bold">
+                    Admin Access
+                </h4>
+
+                <p>
+                    Want to manage movies? Log in using the demo Admin
+                    account to explore the Admin dashboard and add,
+                    update or delete movies.
+                </p>
+
+                <p className="mb-1">
+                    <strong>Email:</strong>admin@streamflix.com
+                </p>
+
+                <p>
+                    <strong>Password:</strong> Admin@123
+                </p>
+
+                
+
+            </div>
         </div>
     );
 }

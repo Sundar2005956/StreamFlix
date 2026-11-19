@@ -1,6 +1,25 @@
 body {
     padding-top: 90px ;
 }
+body {
+    background-color: #0B1120 !important;
+    color: #F1F5F9 !important;
+}
+
+.card {
+    background-color: #1A263B !important;
+    color: #F1F5F9 !important;
+    border: 1px solid #263650 !important;
+}
+
+.btn-danger {
+    background-color: #E50914 !important;
+    border-color: #E50914 !important;
+}
+
+.navbar {
+    background-color: #080D18 !important;
+}
 .navbar-spacer {
     height: 3px;
 }
